@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio PDF Reader</title>
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+</head>
+
+<body>
+  <div class="container d-flex flex-column justify-content-center align-items-center"
+    style="height: calc(100vh - 100px);">
+    <% if(error) {%>
+      <div>
+        <div class="header my-5 text-center">
+          <h3>Audio PDF Reader</h3>
+        </div>
+        <form action="/reader" method="post" enctype="multipart/form-data">
+          <p class="text-danger">
+            <%= error %>
+          </p>
+          <div class="form-group">
+            <input type="file" name="file" class="form-control">
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary w-100">Open <i class="fas fa-lock-open"></i></button>
+          </div>
+        </form>
+      </div>
+      <%} else {%>
+        <div>
+          <div class="header my-5 text-center">
+            <h3>Audio PDF Reader</h3>
+          </div>
+          <form action="/reader" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <input type="file" name="file" class="form-control">
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" class="btn btn-primary w-100">Open <i class="fas fa-lock-open"></i></button>
+            </div>
+          </form>
+        </div>
+        <%}%>
+  </div>
+  <div class="footer text-center">
+    <h3>Powered By Hi-Tech</h3>
+    <p>&copy; 2022</p>
+  </div>
+</body>
+
+</html>
